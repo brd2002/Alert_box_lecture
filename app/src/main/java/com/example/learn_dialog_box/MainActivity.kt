@@ -44,6 +44,22 @@ class MainActivity : AppCompatActivity() {
             })
             builder2.show()
         }
+        binding.type3Button.setOnClickListener {
+            val options = arrayOf("c++" , "c" , "java" , "kotlin")
+            val builder3 = AlertDialog.Builder(this)
+            builder3.setTitle("what is you want?")
+            builder3.setMultiChoiceItems(options , null , DialogInterface.OnMultiChoiceClickListener { dialog, which, isChecked ->
+                Toast.makeText(this , "You clicked on ${options[which]}" , Toast.LENGTH_SHORT).show()
+            })
+            builder3.setPositiveButton("Yes" , DialogInterface.OnClickListener { dialog, which ->
+                // what action should be performed when  clicked
+                finish()
+            })
+            builder3.setNegativeButton("No" , DialogInterface.OnClickListener { dialog, which ->
+                // what action should be performed when  clicked
+            })
+            builder3.show()
+        }
 
     }
 }
